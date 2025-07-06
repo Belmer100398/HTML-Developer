@@ -1,0 +1,27 @@
+{
+  "name": "html-developer",
+  "version": "1.0.0",
+  "description": "CUBE",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Belmer100398/HTML-Developer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Belmer100398/HTML-Developer/issues"
+  },
+  "homepage": "https://github.com/Belmer100398/HTML-Developer#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-jest": "^30.0.4",
+    "jest-environment-jsdom": "^30.0.4"
+  }
+}

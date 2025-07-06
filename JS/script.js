@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+export function initUI() {
     const searchIcon = document.querySelector('.search-icon');
     const searchInput = document.querySelector('.search-input');
     const searchContainer = document.querySelector('.search-container');
@@ -19,30 +19,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('.hamburger-menu')?.addEventListener('click', () => {
         console.log("✅ Hamburger click detected");
-      });
+    });
 
-      
-    document.addEventListener('DOMContentLoaded', () => {
-        const hamburgerMenu = document.querySelector('.hamburger-menu');
-        const mobileNav = document.querySelector('.mobile-nav');
-      
-        if (hamburgerMenu && mobileNav) {
-          hamburgerMenu.addEventListener('click', (event) => {
+    // Hamburger menu and mobile nav logic (moved out of nested DOMContentLoaded)
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (hamburgerMenu && mobileNav) {
+        hamburgerMenu.addEventListener('click', (event) => {
             console.log("✅ Hamburger click detected");
             mobileNav.classList.toggle('menu-open');
-          });
-      
-          document.addEventListener('click', (event) => {
+        });
+
+        document.addEventListener('click', (event) => {
             if (!mobileNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-              mobileNav.classList.remove('menu-open');
+                mobileNav.classList.remove('menu-open');
             }
-          });
-        } else {
-          console.log("❌ Menu elements not found");
-        }
-      });
-      
-    
+        });
+    } else {
+        console.log("❌ Menu elements not found");
+    }
 
     const mainImage = document.querySelector('.main-image img');
     const thumbnails = document.querySelectorAll('.thumbnails img');
@@ -170,5 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+}
 
-});
+if (typeof window !== "undefined") {
+    document.addEventListener('DOMContentLoaded', initUI);
+}
